@@ -30,7 +30,6 @@ header>a{
     text-decoration: none;
     cursor: pointer;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
     border-bottom: 5px solid yellow;
 }
 header>a:hover{

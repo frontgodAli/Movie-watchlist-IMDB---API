@@ -35,8 +35,6 @@ if(document.getElementById("search")){
     })
 }
 
-
-
 document.addEventListener("click",e=>{
     if(e.target.dataset.add){
         saveMovieToLocalStorage(e.target.dataset.add)
@@ -66,7 +64,6 @@ function saveMovieToLocalStorage(imdbID){
                 imdbID:imdbID
             }
             moviesArray.push(movieObj)
-            console.log("Saving movie:", movieObj);
             localStorage.setItem("movies",JSON.stringify(moviesArray))
         })
 }
@@ -75,7 +72,6 @@ function saveMovieToLocalStorage(imdbID){
 function getMovieFromLocalStorage(){
     if(localStorage.getItem("movies")){
         const savedMovies=JSON.parse(localStorage.getItem("movies"))
-        console.log("Retrieved movies:", savedMovies);
         return savedMovies
     }else{
         return null
@@ -84,9 +80,7 @@ function getMovieFromLocalStorage(){
 
 function displayMoviesOnLocalStorage(){
     const watchlistContainer=document.getElementById("watchlist-container")
-    
     const movies=getMovieFromLocalStorage()
-    console.log("Retrieved movies for display:", movies);
     if(watchlistContainer){
         if(movies){
             const moviesHtml=movies.map(data=>{
