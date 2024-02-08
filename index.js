@@ -107,8 +107,14 @@ function displayMoviesOnLocalStorage(){
             }).join("")
             watchlistContainer.innerHTML=moviesHtml
         }
-    
+        if(!movies.length){
+            watchlistContainer.innerHTML=`<div class="empty-list">
+            <p>Your watchlist is looking a little empty...</p>
+            <a href="index.html">Let's add some movies!</a>
+        </div>`
+        }
     }
+
 }
 
 
