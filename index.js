@@ -107,14 +107,11 @@ function displayMoviesOnLocalStorage(){
             }).join("")
             watchlistContainer.innerHTML=moviesHtml
         }
-    }
-    if(!moviesArray.length){
-        watchlistContainer.innerHTML=`<div class="empty-list">
-        <p>Your watchlist is looking a little empty...</p>
-        <a href="index.html">Let's add some movies!</a>
-    </div>`
+    
     }
 }
 
-displayMoviesOnLocalStorage()
+
+    displayMoviesOnLocalStorage();
+
 
