@@ -2,12 +2,12 @@ let moviesArray = getMovieFromLocalStorage() || [];
 
 if(document.getElementById("search")){
     document.getElementById("search").addEventListener("click",()=>{
-        fetch(`http://www.omdbapi.com/?apikey=177fc91e&s=${document.getElementById("input-el").value}`)
+        fetch(`https://www.omdbapi.com/?apikey=177fc91e&s=${document.getElementById("input-el").value}`)
         .then(res => res.json())
         .then(data => {
             
             const promises=data.Search.map(movie=>{
-                return fetch(`http://www.omdbapi.com/?apikey=177fc91e&i=${movie.imdbID}`)
+                return fetch(`https://www.omdbapi.com/?apikey=177fc91e&i=${movie.imdbID}`)
                     .then(res=>res.json())
                     .then(data=>{                 
                         return `<div class="movie-grid">
@@ -53,7 +53,7 @@ function removeFromLocalStorage(imdbID){
 }
 
 function saveMovieToLocalStorage(imdbID){
-    fetch(`http://www.omdbapi.com/?apikey=177fc91e&i=${imdbID}`)
+    fetch(`https://www.omdbapi.com/?apikey=177fc91e&i=${imdbID}`)
         .then(res => res.json())
         .then(data =>{
             const movieObj={
@@ -112,6 +112,6 @@ function displayMoviesOnLocalStorage(){
 }
 
 
-    displayMoviesOnLocalStorage();
+displayMoviesOnLocalStorage();
 
 
